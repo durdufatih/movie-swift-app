@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home Screen-->
+        <!--View Controller-->
         <scene sceneID="QTg-Mv-ZYG">
             <objects>
                 <viewController id="ErX-vl-b2P" sceneMemberID="viewController">
@@ -30,13 +30,13 @@
                             <constraint firstItem="3jJ-1H-Zuk" firstAttribute="centerX" secondItem="4Bb-3o-v0d" secondAttribute="centerX" id="QLx-7O-V6c"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home Screen" id="vb4-Aa-Sqi"/>
+                    <tabBarItem key="tabBarItem" title="" image="2088522" landscapeImage="2088522" largeContentSizeImage="2088522" selectedImage="2088522" id="vb4-Aa-Sqi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0HE-sF-tGT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1295" y="674"/>
         </scene>
-        <!--Search-->
+        <!--View Controller-->
         <scene sceneID="Xgv-Lg-bcd">
             <objects>
                 <viewController id="kTY-fW-Wbb" sceneMemberID="viewController">
@@ -59,13 +59,15 @@
                             <constraint firstItem="W6Z-M5-K9u" firstAttribute="centerY" secondItem="GaI-xe-220" secondAttribute="centerY" id="Xb6-aC-zTa"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Search" id="0Hi-T0-fVA"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="" image="Shape" landscapeImage="Shape" id="0Hi-T0-fVA">
+                        <inset key="imageInsets" minX="0.0" minY="-10" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="55C-Rp-M35" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2065" y="674"/>
         </scene>
-        <!--Favorite-->
+        <!--View Controller-->
         <scene sceneID="YW2-ie-pPt">
             <objects>
                 <viewController id="lpL-ly-ot7" sceneMemberID="viewController">
@@ -88,7 +90,9 @@
                             <constraint firstItem="6z8-aa-5t1" firstAttribute="centerY" secondItem="eDk-Ft-xhq" secondAttribute="centerY" id="ek1-vL-BeY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Favorite" id="gdK-me-y1x"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="" image="Favorite" landscapeImage="Favorite" id="gdK-me-y1x">
+                        <inset key="imageInsets" minX="0.0" minY="-10" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1N-72-7JB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,7 +105,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="qBD-Rt-h2o">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="ErX-vl-b2P" kind="relationship" relationship="viewControllers" id="YRV-T6-mIr"/>
@@ -115,6 +118,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="2088522" width="34" height="34"/>
+        <image name="Favorite" width="16" height="20"/>
+        <image name="Shape" width="14.666666984558105" height="20.666666030883789"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
