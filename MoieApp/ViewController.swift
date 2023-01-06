@@ -10,10 +10,10 @@ import UIKit
 class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
     private let itemsList:[FilmModel]=[
-        FilmModel(imageUrl: "1", title: "Hello Test", rateString: "9.2/10 IMDb"),
-        FilmModel(imageUrl: "2", title: "Fatih Durdu", rateString: "7.2/10 IMDb"),
-        FilmModel(imageUrl: "1", title: "Handenur Durdu", rateString: "8.2/10 IMDb"),
-        FilmModel(imageUrl: "2", title: "Can Uraz Durdu", rateString: "9.5/10 IMDb"),
+        FilmModel(imageUrl: "1", title: "Spiderman: No Way Home", rateString: "9.2/10 IMDb"),
+        FilmModel(imageUrl: "2", title: "Eternals", rateString: "7.2/10 IMDb"),
+        FilmModel(imageUrl: "1", title: "Spiderman: No Way Home", rateString: "8.2/10 IMDb"),
+        FilmModel(imageUrl: "2", title: "Eternals", rateString: "9.5/10 IMDb"),
         
     ]
     

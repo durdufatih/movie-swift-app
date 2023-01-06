@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Film 2.png",
+      "filename" : "Bitmap.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Film 2@2x.png",
+      "filename" : "Bitmap@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Film 2@3x.png",
+      "filename" : "Bitmap@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
