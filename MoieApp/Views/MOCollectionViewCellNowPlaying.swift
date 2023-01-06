@@ -9,6 +9,7 @@ import UIKit
 
 class MOCollectionViewCellNowPlaying: UICollectionViewCell {
     
+    @IBOutlet weak var starImage: UIImageView!
     @IBOutlet weak var filmRate: UILabel!
     @IBOutlet weak var filmTitle: UILabel!
     @IBOutlet weak var posterImage: UIImageView!

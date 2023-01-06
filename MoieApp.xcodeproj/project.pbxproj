@@ -15,6 +15,7 @@
 		3D3DD6A62967070200733A46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D3DD6A42967070200733A46 /* Main.storyboard */; };
 		3D3DD6A82967070300733A46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D3DD6A72967070300733A46 /* Assets.xcassets */; };
 		3D3DD6AB2967070300733A46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D3DD6A92967070300733A46 /* LaunchScreen.storyboard */; };
+		3D8FB2CB2968A70100D51740 /* MOCollectionViewCellPopular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FB2CA2968A70100D51740 /* MOCollectionViewCellPopular.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3D3DD6A72967070300733A46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D3DD6AA2967070300733A46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D3DD6AC2967070300733A46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D8FB2CA2968A70100D51740 /* MOCollectionViewCellPopular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCollectionViewCellPopular.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				3D26A702296785C6003A0E55 /* MOCollectionViewCellNowPlaying.swift */,
+				3D8FB2CA2968A70100D51740 /* MOCollectionViewCellPopular.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D8FB2CB2968A70100D51740 /* MOCollectionViewCellPopular.swift in Sources */,
 				3D3DD6A32967070200733A46 /* ViewController.swift in Sources */,
 				3D3DD69F2967070200733A46 /* AppDelegate.swift in Sources */,
 				3D26A7052967894B003A0E55 /* FilmModel.swift in Sources */,
