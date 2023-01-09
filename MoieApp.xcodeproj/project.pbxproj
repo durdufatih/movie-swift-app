@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D19865D296BA0DA009ED919 /* MOEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D19865A296BA0DA009ED919 /* MOEndpoint.swift */; };
+		3D19865E296BA0DA009ED919 /* MOService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D19865B296BA0DA009ED919 /* MOService.swift */; };
+		3D19865F296BA0DA009ED919 /* MORequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D19865C296BA0DA009ED919 /* MORequest.swift */; };
+		3D198662296BAADD009ED919 /* FilmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D198661296BAADD009ED919 /* FilmData.swift */; };
+		3D198665296BADFD009ED919 /* NowPlayingApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D198664296BADFD009ED919 /* NowPlayingApiResponse.swift */; };
+		3D198667296BAE70009ED919 /* DateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D198666296BAE70009ED919 /* DateData.swift */; };
+		3D198669296C2421009ED919 /* MainPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D198668296C2421009ED919 /* MainPageViewModel.swift */; };
+		3D19866B296C28FF009ED919 /* MOImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D19866A296C28FF009ED919 /* MOImageLoader.swift */; };
 		3D26A703296785C6003A0E55 /* MOCollectionViewCellNowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26A702296785C6003A0E55 /* MOCollectionViewCellNowPlaying.swift */; };
 		3D26A7052967894B003A0E55 /* FilmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26A7042967894B003A0E55 /* FilmModel.swift */; };
 		3D3DD69F2967070200733A46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DD69E2967070200733A46 /* AppDelegate.swift */; };
@@ -19,6 +27,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D19865A296BA0DA009ED919 /* MOEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOEndpoint.swift; sourceTree = "<group>"; };
+		3D19865B296BA0DA009ED919 /* MOService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOService.swift; sourceTree = "<group>"; };
+		3D19865C296BA0DA009ED919 /* MORequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MORequest.swift; sourceTree = "<group>"; };
+		3D198661296BAADD009ED919 /* FilmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmData.swift; sourceTree = "<group>"; };
+		3D198664296BADFD009ED919 /* NowPlayingApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingApiResponse.swift; sourceTree = "<group>"; };
+		3D198666296BAE70009ED919 /* DateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateData.swift; sourceTree = "<group>"; };
+		3D198668296C2421009ED919 /* MainPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewModel.swift; sourceTree = "<group>"; };
+		3D19866A296C28FF009ED919 /* MOImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOImageLoader.swift; sourceTree = "<group>"; };
 		3D26A702296785C6003A0E55 /* MOCollectionViewCellNowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCollectionViewCellNowPlaying.swift; sourceTree = "<group>"; };
 		3D26A7042967894B003A0E55 /* FilmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmModel.swift; sourceTree = "<group>"; };
 		3D3DD69B2967070200733A46 /* MoieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +59,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D198660296BAAB4009ED919 /* DataTypes */ = {
+			isa = PBXGroup;
+			children = (
+				3D198661296BAADD009ED919 /* FilmData.swift */,
+				3D198666296BAE70009ED919 /* DateData.swift */,
+			);
+			path = DataTypes;
+			sourceTree = "<group>";
+		};
+		3D198663296BADD0009ED919 /* ApiResponse */ = {
+			isa = PBXGroup;
+			children = (
+				3D198664296BADFD009ED919 /* NowPlayingApiResponse.swift */,
+			);
+			path = ApiResponse;
+			sourceTree = "<group>";
+		};
 		3D3DD6922967070200733A46 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +123,7 @@
 		3DBFA85A2967076300427BBF /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				3D19866A296C28FF009ED919 /* MOImageLoader.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -97,6 +131,9 @@
 		3DBFA85B2967077300427BBF /* ApiClient */ = {
 			isa = PBXGroup;
 			children = (
+				3D19865A296BA0DA009ED919 /* MOEndpoint.swift */,
+				3D19865C296BA0DA009ED919 /* MORequest.swift */,
+				3D19865B296BA0DA009ED919 /* MOService.swift */,
 			);
 			path = ApiClient;
 			sourceTree = "<group>";
@@ -113,6 +150,7 @@
 		3DBFA85D2967078F00427BBF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3D198668296C2421009ED919 /* MainPageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -120,6 +158,8 @@
 		3DBFA85E2967079800427BBF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3D198663296BADD0009ED919 /* ApiResponse */,
+				3D198660296BAAB4009ED919 /* DataTypes */,
 				3D26A7042967894B003A0E55 /* FilmModel.swift */,
 			);
 			path = Models;
@@ -203,10 +243,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D19865D296BA0DA009ED919 /* MOEndpoint.swift in Sources */,
+				3D19865F296BA0DA009ED919 /* MORequest.swift in Sources */,
+				3D198669296C2421009ED919 /* MainPageViewModel.swift in Sources */,
+				3D19866B296C28FF009ED919 /* MOImageLoader.swift in Sources */,
 				3D8FB2CB2968A70100D51740 /* MOCollectionViewCellPopular.swift in Sources */,
+				3D19865E296BA0DA009ED919 /* MOService.swift in Sources */,
 				3D3DD6A32967070200733A46 /* ViewController.swift in Sources */,
+				3D198667296BAE70009ED919 /* DateData.swift in Sources */,
+				3D198662296BAADD009ED919 /* FilmData.swift in Sources */,
 				3D3DD69F2967070200733A46 /* AppDelegate.swift in Sources */,
 				3D26A7052967894B003A0E55 /* FilmModel.swift in Sources */,
+				3D198665296BADFD009ED919 /* NowPlayingApiResponse.swift in Sources */,
 				3D26A703296785C6003A0E55 /* MOCollectionViewCellNowPlaying.swift in Sources */,
 				3D3DD6A12967070200733A46 /* SceneDelegate.swift in Sources */,
 			);

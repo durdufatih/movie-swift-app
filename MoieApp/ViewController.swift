@@ -8,14 +8,10 @@
 import UIKit
 
 class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+
     
-    private let itemsList:[FilmModel]=[
-        FilmModel(imageUrl: "1", title: "Spiderman: No Way Home", rateString: "9.2/10 IMDb",tag: "Horror",length: "1h 47m"),
-        FilmModel(imageUrl: "2", title: "Eternals", rateString: "7.2/10 IMDb",tag: "Horror",length: "1h 47m"),
-        FilmModel(imageUrl: "1", title: "Spiderman: No Way Home", rateString: "8.2/10 IMDb",tag: "Horror",length: "1h 47m"),
-        FilmModel(imageUrl: "2", title: "Eternals", rateString: "9.5/10 IMDb",tag: "Horror",length: "1h 47m"),
-        
-    ]
+    private let viewModel = MainPageViewModel()
+    
     
     @IBOutlet weak var nowPlayingCell: UICollectionView!
     
@@ -24,35 +20,65 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == nowPlayingCell{
-            return self.itemsList.count
+            return 10
         }
         
-        return self.itemsList.count
+        return 10
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == nowPlayingCell{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "nowPlayingCell", for: indexPath as IndexPath) as! MOCollectionViewCellNowPlaying
-            let filmData : FilmModel = self.itemsList[indexPath.row]
-            cell.posterImage.image = UIImage(named: "Poster-"+filmData.imageUrl)
-            cell.filmTitle.text = filmData.title
-            cell.filmRate.text = filmData.rateString
-            //cell.starImage.image = UIImage(named: "Star")
+            let filmData : FilmData? = self.viewModel.nowPlaying?.results[indexPath.row]
+            
+        
+            
+          
+                let url:URL = URL(string: "https://image.tmdb.org/t/p/original/"+(filmData?.poster_path ?? "gLhu8UFPZfH2Hv11JhTZkb9CVl.jpg"))!
+                MOImageLoader.shared.downloadImage(url: url, completation: { result in
+                    switch result {
+                    case .success(let data):
+                        DispatchQueue.main.async {
+                            let image = UIImage(data:data)
+                            cell.posterImage.image = image
+                        }
+                        
+                    case .failure(let failure):
+                        print(String(describing: failure))
+                        break
+                    }
+                })
+            
+        
+            cell.filmTitle.text = filmData?.title
+            cell.filmRate.text = "\(filmData?.vote_average ?? 0.0 )"
+
             return cell
         }
         else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellPopular", for: indexPath as IndexPath) as! MOCollectionViewCellPopular
-            let filmData : FilmModel = self.itemsList[indexPath.row]
-            cell.filmImagePopular.image = UIImage(named: "Poster-"+filmData.imageUrl)
-            cell.labelFilmTitlePopular.text = filmData.title
-            cell.labelRatePopular.text = filmData.rateString
+            let filmData : FilmData? = self.viewModel.nowPlaying?.results[indexPath.row]
             
-            //cell.starImagepopular.image = UIImage(named: "Star")
-            cell.tagTextPopular.setTitle(filmData.tag, for: .normal)
-            cell.lengthLabelText.text = filmData.length
-            //cell.imageLength.image = UIImage(named: "59252")
-            
+            let url:URL = URL(string: "https://image.tmdb.org/t/p/original/"+(filmData?.poster_path ?? "gLhu8UFPZfH2Hv11JhTZkb9CVl.jpg"))!
+            MOImageLoader.shared.downloadImage(url: url, completation: { result in
+                switch result {
+                case .success(let data):
+                    DispatchQueue.main.async {
+                        let image = UIImage(data:data)
+                        cell.filmImagePopular.image = image
+                    }
+                    
+                case .failure(let failure):
+                    print(String(describing: failure))
+                    break
+                }
+            })
+            cell.labelFilmTitlePopular.text = filmData?.title
+            cell.labelRatePopular.text = "\(filmData?.vote_average ?? 0.0 )"
+            let genre = (String(describing: filmData!.genre_ids[0].description));
+            cell.tagTextPopular.setTitle(genre, for: .normal)
+        
             return cell
         }
         
@@ -67,6 +93,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         nowPlayingCell.dataSource = self
         popularCollectionView.dataSource = self
         popularCollectionView.delegate = self
+        viewModel.fetchCharacter()
         nowPlayingCell.reloadData()
         popularCollectionView.reloadData()
         // Do any additional setup after loading the view.

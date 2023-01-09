@@ -272,21 +272,8 @@ Home</string>
                                                             <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="59252" translatesAutoresizingMaskIntoConstraints="NO" id="E36-dO-Ttr">
-                                                            <rect key="frame" x="95" y="98.666666666666671" width="12" height="12"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="12" id="3KX-C2-IPO"/>
-                                                                <constraint firstAttribute="width" constant="12" id="a2f-jw-Rqf"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1h 47m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccq-Lz-g5u">
-                                                            <rect key="frame" x="110" y="97" width="41" height="15"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <nil key="textColor"/>
-                                                            <color key="highlightedColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qha-S1-Dgf">
-                                                            <rect key="frame" x="93" y="62" width="67.333333333333314" height="19"/>
+                                                            <rect key="frame" x="93" y="75" width="67.333333333333314" height="19"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="19" id="LZ8-9u-FmQ"/>
                                                             </constraints>
@@ -306,30 +293,23 @@ Home</string>
                                                         <constraint firstItem="pRs-sL-Pia" firstAttribute="leading" secondItem="VtY-Qs-rkr" secondAttribute="trailing" constant="8" id="6nn-Un-hJ4"/>
                                                         <constraint firstItem="pRs-sL-Pia" firstAttribute="top" secondItem="4xr-Yp-OVe" secondAttribute="top" constant="8" id="9JI-2M-o9Y"/>
                                                         <constraint firstItem="wpi-fn-MgF" firstAttribute="leading" secondItem="VtY-Qs-rkr" secondAttribute="trailing" constant="8" id="CjA-YY-T4b"/>
-                                                        <constraint firstItem="Ccq-Lz-g5u" firstAttribute="centerY" secondItem="E36-dO-Ttr" secondAttribute="centerY" id="E6t-s4-vdp"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Rml-7t-RzD" secondAttribute="trailing" constant="20" symbolic="YES" id="HtP-uh-94F"/>
                                                         <constraint firstItem="Rml-7t-RzD" firstAttribute="leading" secondItem="wpi-fn-MgF" secondAttribute="trailing" constant="2.9999999999999432" id="Jhw-o8-HbH"/>
-                                                        <constraint firstItem="Ccq-Lz-g5u" firstAttribute="leading" secondItem="E36-dO-Ttr" secondAttribute="trailing" constant="2.9999999999999432" id="TSE-w1-ffE"/>
-                                                        <constraint firstItem="Qha-S1-Dgf" firstAttribute="top" secondItem="Rml-7t-RzD" secondAttribute="bottom" constant="11" id="Tr5-dR-SQD"/>
+                                                        <constraint firstItem="Qha-S1-Dgf" firstAttribute="top" secondItem="Rml-7t-RzD" secondAttribute="bottom" constant="24" id="Tr5-dR-SQD"/>
                                                         <constraint firstItem="Qha-S1-Dgf" firstAttribute="leading" secondItem="VtY-Qs-rkr" secondAttribute="trailing" constant="8.0000000000000568" id="VFN-M0-TKt"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Ccq-Lz-g5u" secondAttribute="bottom" constant="18" id="XiC-kZ-gLz"/>
                                                         <constraint firstItem="Rml-7t-RzD" firstAttribute="top" secondItem="pRs-sL-Pia" secondAttribute="bottom" constant="7" id="mGD-1Y-TBa"/>
                                                         <constraint firstItem="wpi-fn-MgF" firstAttribute="top" secondItem="4xr-Yp-OVe" secondAttribute="top" constant="37" id="qeY-G2-Hfi"/>
                                                         <constraint firstAttribute="trailing" secondItem="pRs-sL-Pia" secondAttribute="trailing" constant="8" id="rxb-kU-hti"/>
-                                                        <constraint firstItem="Ccq-Lz-g5u" firstAttribute="leading" secondItem="4xr-Yp-OVe" secondAttribute="leading" constant="109.99999999999994" id="ssR-rf-UOY"/>
                                                         <constraint firstItem="VtY-Qs-rkr" firstAttribute="leading" secondItem="4xr-Yp-OVe" secondAttribute="leading" id="u2M-zo-fN1"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Qha-S1-Dgf" secondAttribute="trailing" constant="20" symbolic="YES" id="utr-Xr-YQl"/>
                                                         <constraint firstItem="VtY-Qs-rkr" firstAttribute="top" secondItem="4xr-Yp-OVe" secondAttribute="top" constant="4" id="x3x-PH-qbb"/>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ccq-Lz-g5u" secondAttribute="trailing" constant="20" symbolic="YES" id="yk1-Ww-SS8"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="304" height="130"/>
                                                 <connections>
                                                     <outlet property="filmImagePopular" destination="VtY-Qs-rkr" id="gVN-CF-g2z"/>
-                                                    <outlet property="imageLength" destination="E36-dO-Ttr" id="xuc-KN-Bgh"/>
                                                     <outlet property="labelFilmTitlePopular" destination="pRs-sL-Pia" id="gug-Yd-4q6"/>
                                                     <outlet property="labelRatePopular" destination="Rml-7t-RzD" id="zRR-Bw-Vdn"/>
-                                                    <outlet property="lengthLabelText" destination="Ccq-Lz-g5u" id="onW-JQ-dv5"/>
                                                     <outlet property="starImagepopular" destination="wpi-fn-MgF" id="kDu-bP-MjJ"/>
                                                     <outlet property="tagTextPopular" destination="Qha-S1-Dgf" id="VzK-Zp-Dfl"/>
                                                 </connections>
@@ -461,7 +441,6 @@ Home</string>
     </scenes>
     <resources>
         <image name="2088522" width="34" height="34"/>
-        <image name="59252" width="10" height="10.333333015441895"/>
         <image name="Favorite" width="16" height="20"/>
         <image name="Menu" width="8" height="8"/>
         <image name="Notif" width="8" height="8"/>
