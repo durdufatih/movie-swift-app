@@ -29,28 +29,24 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == nowPlayingCell{
+            
+            print("Helllo Now playing")
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "nowPlayingCell", for: indexPath as IndexPath) as! MOCollectionViewCellNowPlaying
             let filmData : FilmData? = self.viewModel.nowPlaying?.results[indexPath.row]
-            
-        
-            
-          
-                let url:URL = URL(string: "https://image.tmdb.org/t/p/original/"+(filmData?.poster_path ?? "gLhu8UFPZfH2Hv11JhTZkb9CVl.jpg"))!
-                MOImageLoader.shared.downloadImage(url: url, completation: { result in
-                    switch result {
-                    case .success(let data):
-                        DispatchQueue.main.async {
-                            let image = UIImage(data:data)
-                            cell.posterImage.image = image
-                        }
-                        
-                    case .failure(let failure):
-                        print(String(describing: failure))
-                        break
+            let url:URL = URL(string: "https://image.tmdb.org/t/p/original/"+(filmData?.poster_path ?? "gLhu8UFPZfH2Hv11JhTZkb9CVl.jpg"))!
+            MOImageLoader.shared.downloadImage(url: url, completation: { result in
+                switch result {
+                case .success(let data):
+                    DispatchQueue.main.async {
+                        let image = UIImage(data:data)
+                        cell.posterImage.image = image
                     }
-                })
-            
-        
+                    
+                case .failure(let failure):
+                    print(String(describing: failure))
+                    break
+                }
+            })
             cell.filmTitle.text = filmData?.title
             cell.filmRate.text = "\(filmData?.vote_average ?? 0.0 )"
 
@@ -58,7 +54,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         }
         else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellPopular", for: indexPath as IndexPath) as! MOCollectionViewCellPopular
-            let filmData : FilmData? = self.viewModel.nowPlaying?.results[indexPath.row]
+            let filmData : FilmData? = self.viewModel.popularMovies?.results[indexPath.row]
             
             let url:URL = URL(string: "https://image.tmdb.org/t/p/original/"+(filmData?.poster_path ?? "gLhu8UFPZfH2Hv11JhTZkb9CVl.jpg"))!
             MOImageLoader.shared.downloadImage(url: url, completation: { result in
@@ -93,6 +89,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         nowPlayingCell.dataSource = self
         popularCollectionView.dataSource = self
         popularCollectionView.delegate = self
+        viewModel.getPopular()
         viewModel.fetchCharacter()
         nowPlayingCell.reloadData()
         popularCollectionView.reloadData()

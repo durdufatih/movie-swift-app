@@ -98,4 +98,5 @@ final class MORequest{
 
 extension MORequest {
     static let nowplayingListRequest = MORequest(endpoint: .now_playing)
+    static let popularMoviesRequest = MORequest(endpoint: .popular)
 }
