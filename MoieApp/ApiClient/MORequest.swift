@@ -38,10 +38,12 @@ final class MORequest{
                 return "\($0.name)=\(value)"}).joined(separator:"&")
             
             string += argumentedString
+            string += "&api_key=" + Constant.apiKey
         }
         if queryParameters.isEmpty{
             string += "?api_key=" + Constant.apiKey
         }
+    
         
         
         return string

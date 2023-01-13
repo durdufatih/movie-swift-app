@@ -10,7 +10,7 @@ import Foundation
 class GeneralMovieResponse: Codable {
     let dates: DateData?
     let page : Int
-    let results : [FilmData]
+    var results : [FilmData]
     let total_pages: Int
     let total_results: Int
 }

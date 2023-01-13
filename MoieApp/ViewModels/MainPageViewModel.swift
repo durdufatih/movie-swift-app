@@ -25,6 +25,8 @@ final class MainPageViewModel {
                 
             }
         }
+        
+        
     }
     
     public func getPopular(){

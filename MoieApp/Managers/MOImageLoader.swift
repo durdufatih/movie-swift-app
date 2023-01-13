@@ -18,7 +18,6 @@ final class MOImageLoader{
         let key = url.absoluteString as NSString
         
         if let data = imageDataCache.object(forKey: key){
-            print("Reading from cache!!!")
             completation(.success(data as Data))
             return
         }

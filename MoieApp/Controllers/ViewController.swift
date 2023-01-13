@@ -11,26 +11,28 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
 
     
     private let viewModel = MainPageViewModel()
+    private var showMoreValue = ""
     
     
     @IBOutlet weak var nowPlayingCell: UICollectionView!
     
     @IBOutlet weak var popularCollectionView: UICollectionView!
     
+    private let nvc = UINavigationController()
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == nowPlayingCell{
-            return 10
+            return self.viewModel.nowPlaying?.results.count ?? 10
         }
         
-        return 10
+        return self.viewModel.popularMovies?.results.count ?? 10
         
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == nowPlayingCell{
-            
-            print("Helllo Now playing")
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "nowPlayingCell", for: indexPath as IndexPath) as! MOCollectionViewCellNowPlaying
             let filmData : FilmData? = self.viewModel.nowPlaying?.results[indexPath.row]
             let url:URL = URL(string: "https://image.tmdb.org/t/p/original/"+(filmData?.poster_path ?? "gLhu8UFPZfH2Hv11JhTZkb9CVl.jpg"))!
@@ -72,6 +74,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             })
             cell.labelFilmTitlePopular.text = filmData?.title
             cell.labelRatePopular.text = "\(filmData?.vote_average ?? 0.0 )"
+            
+            
             let genre = (String(describing: filmData!.genre_ids[0].description));
             cell.tagTextPopular.setTitle(genre, for: .normal)
         
@@ -81,7 +85,19 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     }
     
 
+
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as? MoreShowViewController
+        if segue.identifier == "morePlaying"{
+            destinationVC?.stateOfActualSection = "morePlaying"
+            destinationVC?.navigationItem.title = "Now Playing"
+        }
+        else{
+            destinationVC?.stateOfActualSection = "morePopular"
+            destinationVC?.title = "Popular"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
