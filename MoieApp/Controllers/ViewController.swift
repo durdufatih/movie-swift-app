@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
 
@@ -36,19 +37,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "nowPlayingCell", for: indexPath as IndexPath) as! MOCollectionViewCellNowPlaying
             let filmData : FilmData? = self.viewModel.nowPlaying?.results[indexPath.row]
             let url:URL = URL(string: "https://image.tmdb.org/t/p/original/"+(filmData?.poster_path ?? "gLhu8UFPZfH2Hv11JhTZkb9CVl.jpg"))!
-            MOImageLoader.shared.downloadImage(url: url, completation: { result in
-                switch result {
-                case .success(let data):
-                    DispatchQueue.main.async {
-                        let image = UIImage(data:data)
-                        cell.posterImage.image = image
-                    }
-                    
-                case .failure(let failure):
-                    print(String(describing: failure))
-                    break
-                }
-            })
+            
+            cell.posterImage.kf.setImage(with: url)
             cell.filmTitle.text = filmData?.title
             cell.filmRate.text = "\(filmData?.vote_average ?? 0.0 )"
 
@@ -59,24 +49,12 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             let filmData : FilmData? = self.viewModel.popularMovies?.results[indexPath.row]
             
             let url:URL = URL(string: "https://image.tmdb.org/t/p/original/"+(filmData?.poster_path ?? "gLhu8UFPZfH2Hv11JhTZkb9CVl.jpg"))!
-            MOImageLoader.shared.downloadImage(url: url, completation: { result in
-                switch result {
-                case .success(let data):
-                    DispatchQueue.main.async {
-                        let image = UIImage(data:data)
-                        cell.filmImagePopular.image = image
-                    }
-                    
-                case .failure(let failure):
-                    print(String(describing: failure))
-                    break
-                }
-            })
+            cell.filmImagePopular.kf.setImage(with: url)
             cell.labelFilmTitlePopular.text = filmData?.title
             cell.labelRatePopular.text = "\(filmData?.vote_average ?? 0.0 )"
             
             
-            let genre = (String(describing: filmData!.genre_ids[0].description));
+            let genre = (String(describing: filmData?.genre_ids[0].description));
             cell.tagTextPopular.setTitle(genre, for: .normal)
         
             return cell
