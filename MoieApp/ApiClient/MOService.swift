@@ -25,7 +25,6 @@ final class MOService{
             completion(.failure(MOServiceError.failedToCreateRequest))
             return
         }
-        print(urlRequest)
 
         let task = URLSession.shared.dataTask(with: urlRequest){data,_,error in
             guard let data = data, error == nil else {

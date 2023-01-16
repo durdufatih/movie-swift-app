@@ -13,9 +13,7 @@ final class MoreShowViewModel {
     
     
     public func fetchDetailOfData(moModelType:String){
-        print(self.resultOfData.count)
         let pageActual = (self.resultOfData.count / 20) + 1
-        print(moModelType)
         getRestData(page: pageActual, moEndPoint: moModelType == "morePopular" ? MOEndpoint.popular: MOEndpoint.now_playing)
         
     }

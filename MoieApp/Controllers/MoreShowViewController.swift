@@ -21,7 +21,6 @@ class MoreShowViewController: UIViewController,UICollectionViewDelegate,UICollec
         showMoreCollectionView.delegate = self
         showMoreCollectionView.dataSource = self
         showMoreCollectionView.register(IndicatorCell.self, forCellWithReuseIdentifier: "indicator")
-        self.showMoreCollectionView.reloadData()
         self.vm.fetchDetailOfData(moModelType: self.stateOfActualSection)
         self.showMoreCollectionView.reloadData()
         self.setTitle()
@@ -30,13 +29,7 @@ class MoreShowViewController: UIViewController,UICollectionViewDelegate,UICollec
         // Do any additional setup after loading the view.
     }
     
-    /*func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        //self.vm.fetchDetailOfData(moModelType: self.stateOfActualSection)
-        for indexPath in indexPaths {
-              print("Hello: \(indexPath)")
-              // veriyi önceden yükle
-        }
-    }*/
+
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == self.vm.resultOfData.count-1{
                 self.vm.fetchDetailOfData(moModelType: self.stateOfActualSection)
@@ -76,12 +69,6 @@ class MoreShowViewController: UIViewController,UICollectionViewDelegate,UICollec
             return cell
         }
     }
-    
-   /* func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let size = collectionView.frame.size
-        let cellHeight =  (indexPath.row == vm.resultOfData.count && loadingMore) ? 100 : (size.height / 3)
-            return CGSize(width: size.width , height: cellHeight)
-        }*/
 
 
 }

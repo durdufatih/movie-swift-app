@@ -10,7 +10,7 @@ import Foundation
 final class MORequest{
     
     public struct Constant{
-        static let baseUrl = "https://api.themoviedb.org/3/movie"
+        static let baseUrl = "https://api.themoviedb.org/3"
         static let apiKey = "34072a69de66c66a3774735e2c5bf88d"
     }
     
