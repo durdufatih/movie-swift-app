@@ -54,7 +54,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             cell.labelRatePopular.text = "\(filmData?.vote_average ?? 0.0 )"
             
             
-            let genre = (String(describing: filmData?.genre_ids[0].description));
+            let genre = (String(describing: filmData!.genre_ids[0].description));
             cell.tagTextPopular.setTitle(genre, for: .normal)
         
             return cell

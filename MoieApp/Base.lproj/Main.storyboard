@@ -378,9 +378,9 @@ Home</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hQe-rh-c0z">
-                                <rect key="frame" x="0.0" y="111" width="393" height="739"/>
+                                <rect key="frame" x="0.0" y="111" width="393" height="658"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="emL-2I-3aD">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="emL-2I-3aD">
                                     <size key="itemSize" width="383" height="129"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -388,7 +388,7 @@ Home</string>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="searchCell" id="GV3-CM-S9I" customClass="SearchCollectionViewCell" customModule="MoieApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="392" height="116"/>
+                                        <rect key="frame" x="0.66666666666666663" y="0.0" width="392" height="116"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="oSk-nG-lhc">
                                             <rect key="frame" x="0.0" y="0.0" width="392" height="116"/>
@@ -452,7 +452,7 @@ Home</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="UtV-Hl-pnt" firstAttribute="leading" secondItem="INu-fW-kea" secondAttribute="leading" constant="16" id="6C1-DF-AbT"/>
-                            <constraint firstAttribute="bottom" secondItem="hQe-rh-c0z" secondAttribute="bottom" constant="2" id="9ab-eq-CX8"/>
+                            <constraint firstAttribute="bottom" secondItem="hQe-rh-c0z" secondAttribute="bottom" constant="83" id="9ab-eq-CX8"/>
                             <constraint firstItem="hQe-rh-c0z" firstAttribute="leading" secondItem="INu-fW-kea" secondAttribute="leading" id="Bhi-O1-d4F"/>
                             <constraint firstItem="UtV-Hl-pnt" firstAttribute="top" secondItem="INu-fW-kea" secondAttribute="top" constant="19" id="D3g-Jw-P09"/>
                             <constraint firstItem="UtV-Hl-pnt" firstAttribute="top" secondItem="INu-fW-kea" secondAttribute="top" constant="19" id="LoO-dU-mPj"/>
