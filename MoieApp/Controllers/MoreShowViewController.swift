@@ -12,7 +12,7 @@ class MoreShowViewController: UIViewController,UICollectionViewDelegate,UICollec
     var stateOfActualSection = ""
     let vm = MoreShowViewModel()
     var loadingMore = false
-    
+        
     @IBOutlet weak var navBar: UINavigationBar!
     
     @IBOutlet weak var showMoreCollectionView: UICollectionView!
@@ -21,8 +21,14 @@ class MoreShowViewController: UIViewController,UICollectionViewDelegate,UICollec
         showMoreCollectionView.delegate = self
         showMoreCollectionView.dataSource = self
         showMoreCollectionView.register(IndicatorCell.self, forCellWithReuseIdentifier: "indicator")
-        self.vm.fetchDetailOfData(moModelType: self.stateOfActualSection)
-        self.showMoreCollectionView.reloadData()
+        self.vm.fetchDetailOfData(moModelType: self.stateOfActualSection) { result in
+            if !result{
+                DispatchQueue.main.async {
+                    self.showMoreCollectionView.reloadData()
+                }
+            }
+        }
+       
         self.setTitle()
         
 
@@ -32,8 +38,12 @@ class MoreShowViewController: UIViewController,UICollectionViewDelegate,UICollec
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == self.vm.resultOfData.count-1{
-                self.vm.fetchDetailOfData(moModelType: self.stateOfActualSection)
-                self.showMoreCollectionView.reloadData()
+            self.vm.fetchDetailOfData(moModelType: self.stateOfActualSection) { result in
+                DispatchQueue.main.async {
+                    self.showMoreCollectionView.reloadData()
+                }
+            }
+                
             
         }
     }

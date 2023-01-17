@@ -15,10 +15,14 @@ final class SearchViewController : UIViewController,UICollectionViewDelegate,UIC
     
     @IBAction func searchButtonAction(_ sender: Any) {
         if searchInput.hasText {
-            self.vm.fetchDetailOfData(title: self.searchInput.text!)
-            DispatchQueue.main.async {
-                self.searchCollectionView.reloadData()
+            self.vm.fetchDetailOfData(title: self.searchInput.text!) { result in
+                if !result{
+                    DispatchQueue.main.async {
+                        self.searchCollectionView.reloadData()
+                    }
+                }
             }
+            
         }
         else{
             showAlertAction(title: "Text Error Problem", message: "Textfield doesn't have text")

@@ -13,6 +13,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     private let viewModel = MainPageViewModel()
     private var showMoreValue = ""
+    private let activityIndicatory = UIActivityIndicatorView()
     
     
     @IBOutlet weak var nowPlayingCell: UICollectionView!
@@ -54,7 +55,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             cell.labelRatePopular.text = "\(filmData?.vote_average ?? 0.0 )"
             
             
-            let genre = (String(describing: filmData!.genre_ids[0].description));
+            let genre = (String(describing: filmData?.genre_ids[0].description));
             cell.tagTextPopular.setTitle(genre, for: .normal)
         
             return cell
@@ -83,8 +84,24 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         nowPlayingCell.dataSource = self
         popularCollectionView.dataSource = self
         popularCollectionView.delegate = self
-        viewModel.getPopular()
-        viewModel.fetchCharacter()
+        activityIndicatory.startAnimating()
+        viewModel.getPopular { data in
+            if !data{
+                DispatchQueue.main.async {
+                    self.activityIndicatory.stopAnimating()
+                }
+                
+            }
+        }
+        activityIndicatory.startAnimating()
+        viewModel.fetchCharacter { result in
+            if !result{
+                DispatchQueue.main.async {
+                    self.activityIndicatory.stopAnimating()
+                }
+                
+            }
+        }
         nowPlayingCell.reloadData()
         popularCollectionView.reloadData()
         // Do any additional setup after loading the view.
