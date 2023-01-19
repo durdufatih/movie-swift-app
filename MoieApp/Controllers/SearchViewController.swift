@@ -69,7 +69,7 @@ final class SearchViewController : UIViewController,UICollectionViewDelegate,UIC
         let filmData : FilmData? = self.vm.resultOfData[indexPath.row]
         let url:URL = URL(string: "https://image.tmdb.org/t/p/original/"+(filmData?.poster_path ?? "gLhu8UFPZfH2Hv11JhTZkb9CVl.jpg"))!
     
-
+        cell.parentVC = self
         cell.seardImageView.kf.setImage(with: url)
         cell.searchTitle.text = filmData?.title
         cell.searchDescription.text = filmData?.overview
